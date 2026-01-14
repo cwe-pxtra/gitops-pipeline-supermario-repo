@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: supermario-service
+  labels:
+    app: supermario
+spec:
+  type: NodePort
+  selector:
+    app: supermario
+  ports:
+    - port: 8080
+      targetPort: 8080
+      nodePort: 30180
+      protocol: TCP
+      name: http

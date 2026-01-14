@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: supermario
+  labels:
+    app: supermario
+spec:
+  containers:
+    - name: supermario
+      image: supermario:latest
+      imagePullPolicy: Never
+      ports:
+        - containerPort: 8080
+          name: http
+      resources:
+        requests:
+          memory: "128Mi"
+          cpu: "100m"
+        limits:
+          memory: "256Mi"
+          cpu: "500m"
